@@ -5,30 +5,21 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fusion Scaffolding</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome for WhatsApp icon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
-    :root {
+    :root{
       --brand-dark: #003366;
       --brand-accent: #00bcd4;
       --text-dark: #002244;
       --max-width: 1150px;
     }
 
-    * { box-sizing: border-box; }
-
     body {
       margin:0;
-      font-family: "Roboto", Arial, sans-serif;
+      font-family: "Helvetica Neue", Arial, sans-serif;
       color:#222;
       background:#fff;
       position:relative;
       min-height:100vh;
-      overflow-x:hidden;
     }
 
     /* Watermark background */
@@ -37,7 +28,7 @@
       position:fixed;
       top:0; left:0; right:0; bottom:0;
       background:url('images/theme-bg2.jpg') center/contain no-repeat;
-      opacity:0.05;
+      opacity:0.06;          
       z-index:-1;
     }
 
@@ -45,142 +36,104 @@
     header{
       background:#ffffff;
       border-bottom:4px solid var(--brand-accent);
-      padding:12px 20px;
+      padding:18px 28px;
       display:flex;
       align-items:center;
       justify-content:space-between;
+      flex-wrap:wrap;
       position:sticky;
       top:0;
       z-index:1000;
-      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
-    .brand{display:flex; align-items:center; gap:12px;}
-    .brand img.logo{height:60px; width:auto;}
-    .site-title{color:var(--brand-dark); font-weight:700; font-size:22px;}
+    .brand{display:flex; align-items:center; gap:18px;}
+    .brand img.logo{
+      height:110px; 
+      width:auto;
+    }
+    @media (max-width: 768px) {
+      .brand img.logo {
+        height:85px; 
+      }
+    }
+    .site-title{color:var(--brand-dark); font-weight:700; font-size:30px;}
 
-    nav{display:flex; gap:16px; align-items:center;}
+    nav{display:flex; gap:18px; align-items:center; flex-wrap:wrap;}
     nav a{
       color:var(--text-dark);
       font-weight:600;
-      font-size:15px;
+      font-size:16px;
       padding:6px 12px;
       border-radius:4px;
-      transition: all .3s ease;
+      transition:background .2s;
+      text-decoration:none;
     }
     nav a:hover{background:var(--brand-accent); color:#fff;}
 
     /* Hero */
     .hero{
-      background: linear-gradient(rgba(0,51,102,0.65), rgba(0,51,102,0.55)), url('images/bg1.jpg') center/cover no-repeat;
-      color:#fff;
-      text-align:center;
-      padding:100px 18px;
-      animation: fadeIn 1.5s ease-in-out;
+      background: linear-gradient(rgba(0,51,102,0.6), rgba(0,51,102,0.55)), url('images/bg1.jpg') center/cover no-repeat;
+      color:#fff; text-align:center; padding:100px 18px;
+      animation: fadeIn 2s ease-in-out;
     }
-    .hero h1{
-      font-size:44px;
-      margin:0 0 10px;
-      animation: slideInDown 1s ease-in-out;
-    }
-    .hero p{
-      font-size:20px;
-      margin:0 0 18px;
-      animation: fadeInUp 1.3s ease-in-out;
-    }
-    .btn{
-      display:inline-block;
-      background:var(--brand-accent);
-      color:#fff;
-      padding:12px 22px;
-      border-radius:6px;
-      font-weight:700;
-      text-decoration:none;
-      transition: all .3s;
-    }
+    .hero h1{font-size:44px; margin:0 0 10px; animation: slideDown 1s ease;}
+    .hero p{font-size:20px; margin:0 0 18px; animation: slideUp 1s ease;}
+    .btn{display:inline-block; background:var(--brand-accent); color:#fff; padding:12px 22px; border-radius:6px; font-weight:700; text-decoration:none; transition:0.3s;}
     .btn:hover{opacity:0.9; transform:scale(1.05);}
 
     /* Animations */
-    @keyframes fadeIn {from{opacity:0} to{opacity:1}}
-    @keyframes fadeInUp {from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);}}
-    @keyframes slideInDown {from{opacity:0; transform:translateY(-30px);} to{opacity:1; transform:translateY(0);}}
+    @keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
+    @keyframes slideDown {from{transform:translateY(-40px);opacity:0;} to{transform:translateY(0);opacity:1;}}
+    @keyframes slideUp {from{transform:translateY(40px);opacity:0;} to{transform:translateY(0);opacity:1;}}
 
     /* Layout */
     main{max-width:var(--max-width); margin:40px auto; padding:0 18px;}
     section{margin-bottom:50px;}
     h2{color:var(--brand-dark); font-size:26px; margin-bottom:14px;}
     .grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));}
-    .card{
-      background:#fff;
-      padding:18px;
-      border-radius:10px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.06);
-      transition: transform .3s ease, box-shadow .3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow:0 6px 16px rgba(0,0,0,0.12);
-    }
+    .card{background:#fff; padding:18px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.06); transition:0.3s;}
+    .card:hover{transform:translateY(-4px); box-shadow:0 6px 16px rgba(0,0,0,0.1);}
 
     /* Form */
     form{display:grid; gap:12px; max-width:720px; margin:0 auto;}
-    input, textarea{
-      width:100%;
-      padding:12px;
-      border-radius:8px;
-      border:1px solid #ccc;
-      font-size:15px;
-    }
+    input, textarea{width:100%; padding:12px; border-radius:8px; border:1px solid #ccc; font-size:15px;}
     textarea{min-height:140px;}
-    button[type="submit"]{
-      background:var(--brand-dark);
-      color:#fff;
-      border:none;
-      padding:12px 16px;
-      border-radius:8px;
-      font-weight:700;
-      cursor:pointer;
-      transition:.3s;
-    }
+    button[type="submit"]{background:var(--brand-dark); color:#fff; border:none; padding:12px 16px; border-radius:8px; font-weight:700; cursor:pointer; transition:0.3s;}
     button[type="submit"]:hover{background:#052b56;}
 
-    footer{
-      background:var(--brand-dark);
-      color:#fff;
-      padding:28px 18px;
-      text-align:center;
-    }
+    footer{background:var(--brand-dark); color:#fff; padding:28px 18px; text-align:center;}
     footer a{color:var(--brand-accent);}
 
     /* WhatsApp Floating Button */
-    .whatsapp-float{
-      position:fixed;
-      width:60px;
-      height:60px;
-      bottom:20px;
-      right:20px;
-      background:#25D366;
-      color:#fff;
-      border-radius:50%;
-      text-align:center;
-      font-size:28px;
-      box-shadow:2px 2px 10px rgba(0,0,0,0.2);
-      z-index:1000;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:all .3s;
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: transform 0.3s;
     }
-    .whatsapp-float:hover{transform:scale(1.1); background:#20b954;}
-    
-    /* Mobile */
-    @media(max-width:768px){
-      nav{display:none;} /* Simplify for mobile - can add hamburger later */
-      .hero h1{font-size:32px;}
-      .hero p{font-size:16px;}
-      .brand img.logo{height:50px;}
-      .site-title{font-size:18px;}
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    @media (max-width: 768px) {
+      .whatsapp-float {
+        display: none; /* Hide on mobile */
+      }
     }
   </style>
+
+  <!-- Font Awesome for WhatsApp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -198,6 +151,8 @@
       <a href="#why">Why Us</a>
       <a href="#credentials">Credentials</a>
       <a href="#contact">Contact</a>
+      <a href="#purchase-form" class="btn">Purchase Enquiry</a>
+      <a href="#rental-form" class="btn">Rental Enquiry</a>
     </nav>
   </header>
 
@@ -205,11 +160,9 @@
     <h1>Fusion Scaffolding</h1>
     <p>Strong. Safe. Reliable Scaffolding Solutions — trusted by India’s leading builders.</p>
     <a href="#contact" class="btn">Request a Quote</a>
-    <a href="#rental" class="btn" style="margin-left:12px;background:#ff9800;">Material on Rent</a>
   </div>
 
   <main>
-    <!-- About Section -->
     <section id="about">
       <h2>About Fusion Scaffolding</h2>
       <div class="card">
@@ -217,7 +170,6 @@
       </div>
     </section>
 
-    <!-- Rental Section -->
     <section id="rental">
       <h2>Rental Services & Brochure</h2>
       <div class="grid">
@@ -232,7 +184,6 @@
       </div>
     </section>
 
-    <!-- Why Us -->
     <section id="why">
       <h2>Why Choose Fusion Scaffolding</h2>
       <div class="grid">
@@ -245,7 +196,6 @@
       </div>
     </section>
 
-    <!-- Credentials -->
     <section id="credentials">
       <h2>Credentials</h2>
       <div class="grid">
@@ -258,7 +208,6 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact">
       <h2>Contact & Request a Quotation</h2>
       <div class="card">
@@ -267,14 +216,33 @@
         Raipur, Chhattisgarh – 492099</p>
         <p><strong>Phone:</strong> +91-9993399051<br>
         <strong>Email:</strong> <a href="mailto:info@fusionscaff.com">info@fusionscaff.com</a></p>
+      </div>
+    </section>
 
-        <h3>Request a Quotation</h3>
+    <!-- Purchase Enquiry Form -->
+    <section id="purchase-form">
+      <h2>Purchase Enquiry</h2>
+      <div class="card">
         <form action="#" method="post">
           <input type="text" name="name" placeholder="Your name" required>
           <input type="tel" name="phone" placeholder="Phone number" required>
           <input type="email" name="email" placeholder="Email address" required>
-          <textarea name="message" placeholder="Project details / requirements" required></textarea>
-          <button type="submit">Submit Request</button>
+          <textarea name="message" placeholder="Purchase requirements" required></textarea>
+          <button type="submit">Submit Enquiry</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Rental Enquiry Form -->
+    <section id="rental-form">
+      <h2>Rental Enquiry</h2>
+      <div class="card">
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="tel" name="phone" placeholder="Phone number" required>
+          <input type="email" name="email" placeholder="Email address" required>
+          <textarea name="message" placeholder="Rental requirements" required></textarea>
+          <button type="submit">Submit Enquiry</button>
         </form>
       </div>
     </section>
@@ -286,9 +254,9 @@
   </footer>
 
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/919993399051?text=Hello%20Fusion%20Scaffolding%2C%20I%20want%20to%20know%20more%20about%20your%20services." 
-     class="whatsapp-float" target="_blank">
+  <a href="https://wa.me/919993399051?text=Hello%20Fusion%20Scaffolding,%20I%20have%20an%20enquiry." class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
+
 </body>
 </html>
