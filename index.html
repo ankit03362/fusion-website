@@ -4,32 +4,55 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- ✅ SEO Title & Description -->
+  <!-- SEO Title & Description -->
   <title>Fusion Scaffolding | Scaffolding & Shuttering Rental in Raipur</title>
   <meta name="description" content="Fusion Scaffolding offers strong, safe, and reliable scaffolding & shuttering rental services in Raipur. ISO 9001:2008 certified with 20+ years of experience.">
   <meta name="keywords" content="scaffolding rental Raipur, shuttering on rent, scaffolding purchase, formwork solutions, Fusion Scaffolding, Raipur construction equipment">
   <meta name="author" content="Fusion Scaffolding">
 
-  <!-- ✅ Canonical -->
+  <!-- Canonical -->
   <link rel="canonical" href="https://fusionscaff.com/">
 
-  <!-- ✅ Open Graph (social previews) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Fusion Scaffolding | Scaffolding & Shuttering Rental in Raipur">
   <meta property="og:description" content="Fusion Scaffolding provides strong, safe, and reliable scaffolding & shuttering solutions with nationwide service.">
   <meta property="og:url" content="https://fusionscaff.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://fusionscaff.com/images/logo.png">
 
-  <!-- ✅ Twitter Card -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Fusion Scaffolding | Scaffolding & Shuttering Rental in Raipur">
   <meta name="twitter:description" content="Strong. Safe. Reliable Scaffolding & Shuttering solutions in Raipur.">
   <meta name="twitter:image" content="https://fusionscaff.com/images/logo.png">
 
-  <!-- ✅ Favicon -->
-  <link rel="icon" href="images/favicon.ico">
+  <!-- Favicon (absolute path) -->
+  <link rel="icon" href="https://fusionscaff.com/images/favicon.ico">
 
-  <!-- ✅ Font Awesome (for icons) -->
+  <!-- Structured Data (LocalBusiness Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fusion Scaffolding",
+    "image": "https://fusionscaff.com/images/logo.png",
+    "logo": "https://fusionscaff.com/images/logo.png",
+    "url": "https://fusionscaff.com/",
+    "telephone": "+91-9993399051",
+    "email": "info@fusionscaff.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "OPP. ITI, Near Dixit Transport, Atari Road, Tatibandh",
+      "addressLocality": "Raipur",
+      "addressRegion": "Chhattisgarh",
+      "postalCode": "492099",
+      "addressCountry": "IN"
+    },
+    "areaServed": "India"
+  }
+  </script>
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -49,7 +72,6 @@
       min-height:100vh;
     }
 
-    /* Watermark background */
     body::before {
       content:"";
       position:fixed;
@@ -59,7 +81,6 @@
       z-index:-1;
     }
 
-    /* Header */
     header{
       background:#ffffff;
       border-bottom:4px solid var(--brand-accent);
@@ -72,6 +93,7 @@
       z-index:1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
+
     .brand{display:flex; align-items:center; gap:18px;}
     .brand img.logo{height:110px; width:auto;}
     .site-title{color:var(--brand-dark); font-weight:700; font-size:30px;}
@@ -84,48 +106,72 @@
       padding:6px 12px;
       border-radius:4px;
       transition:background .2s;
+      text-decoration:none;
     }
     nav a:hover{background:var(--brand-accent); color:#fff;}
 
-    /* Hero */
     .hero{
       background: linear-gradient(rgba(0,51,102,0.6), rgba(0,51,102,0.55)), url('images/bg1.jpg') center/cover no-repeat;
       color:#fff; text-align:center; padding:100px 18px;
     }
-    .hero h1{font-size:44px; margin:0 0 10px; animation: fadeInDown 1s ease;}
-    .hero p{font-size:20px; margin:0 0 18px; animation: fadeInUp 1.2s ease;}
-    .btn{display:inline-block; background:var(--brand-accent); color:#fff; padding:12px 22px; border-radius:6px; font-weight:700; text-decoration:none; transition:0.3s;}
+    .hero h1{font-size:44px; margin:0 0 10px;}
+    .hero p{font-size:20px; margin:0 0 18px;}
+
+    .btn{
+      display:inline-block;
+      background:var(--brand-accent);
+      color:#fff;
+      padding:12px 22px;
+      border-radius:6px;
+      font-weight:700;
+      text-decoration:none;
+      transition:0.3s;
+    }
     .btn:hover{opacity:0.9; transform: scale(1.05);}
 
-    /* Animations */
-    @keyframes fadeInDown {
-      from {opacity:0; transform: translateY(-20px);}
-      to {opacity:1; transform: translateY(0);}
-    }
-    @keyframes fadeInUp {
-      from {opacity:0; transform: translateY(20px);}
-      to {opacity:1; transform: translateY(0);}
-    }
-
-    /* Layout */
     main{max-width:var(--max-width); margin:40px auto; padding:0 18px;}
     section{margin-bottom:50px;}
     h2{color:var(--brand-dark); font-size:26px; margin-bottom:14px;}
+
     .grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));}
-    .card{background:#fff; padding:18px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.06); transition:0.3s;}
+    .card{
+      background:#fff;
+      padding:18px;
+      border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.06);
+      transition:0.3s;
+    }
     .card:hover{transform: translateY(-5px);}
 
-    /* Form */
     form{display:grid; gap:12px; max-width:720px; margin:0 auto;}
-    input, textarea{width:100%; padding:12px; border-radius:8px; border:1px solid #ccc; font-size:15px;}
+    input, textarea{
+      width:100%;
+      padding:12px;
+      border-radius:8px;
+      border:1px solid #ccc;
+      font-size:15px;
+    }
     textarea{min-height:140px;}
-    button[type="submit"]{background:var(--brand-dark); color:#fff; border:none; padding:12px 16px; border-radius:8px; font-weight:700; cursor:pointer;}
+
+    button[type="submit"]{
+      background:var(--brand-dark);
+      color:#fff;
+      border:none;
+      padding:12px 16px;
+      border-radius:8px;
+      font-weight:700;
+      cursor:pointer;
+    }
     button[type="submit"]:hover{background:#052b56;}
 
-    footer{background:var(--brand-dark); color:#fff; padding:28px 18px; text-align:center;}
-    footer a{color:var(--brand-accent);}
+    footer{
+      background:var(--brand-dark);
+      color:#fff;
+      padding:28px 18px;
+      text-align:center;
+    }
+    footer a{color:var(--brand-accent); text-decoration:none;}
 
-    /* Floating Action Buttons (Mobile Only) */
     .fab-container {
       position: fixed;
       bottom: 20px;
@@ -135,6 +181,7 @@
       gap: 12px;
       z-index: 1000;
     }
+
     .fab {
       width: 55px;
       height: 55px;
@@ -146,131 +193,69 @@
       color: white;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       transition: transform 0.3s;
+      text-decoration:none;
     }
+
     .fab:hover {transform: scale(1.1);}
     .fab.whatsapp {background: #25D366;}
     .fab.call {background: #0A66C2;}
 
-    /* Hide floating buttons on desktop */
     @media (min-width: 769px) {
       .fab-container {display: none;}
     }
-    /* Hide old WhatsApp float on mobile */
-    @media (max-width: 768px) {
-      .whatsapp-float {display: none;}
-    }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="brand">
-      <img src="images/logo.png" alt="Fusion Scaffolding company logo" class="logo">
-      <div>
-        <div class="site-title">Fusion Scaffolding</div>
-        <div style="font-size:13px; color:#555;">Strong · Safe · Reliable</div>
-      </div>
+<header>
+  <div class="brand">
+    <img src="images/logo.png" alt="Fusion Scaffolding company logo" class="logo">
+    <div>
+      <div class="site-title">Fusion Scaffolding</div>
+      <div style="font-size:13px; color:#555;">Strong · Safe · Reliable</div>
     </div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#rental">Rental</a>
-      <a href="#why">Why Us</a>
-      <a href="#credentials">Credentials</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <div class="hero">
-    <h1>Fusion Scaffolding</h1>
-    <p>Strong. Safe. Reliable Scaffolding Solutions — trusted by India’s leading builders.</p>
-    <a href="#contact" class="btn">Request a Quote</a>
   </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#rental">Rental</a>
+    <a href="#why">Why Us</a>
+    <a href="#credentials">Credentials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <main>
-    <section id="about">
-      <h2>About Fusion Scaffolding</h2>
-      <div class="card">
-        <p>Fusion Scaffolding is a trusted leader in scaffolding, shuttering and formwork solutions with over 20 years of experience. ISO 9001:2008 certified, we serve projects nationwide with a strong commitment to safety, quality and on-time delivery.</p>
-      </div>
-    </section>
+<div class="hero">
+  <h1>Fusion Scaffolding</h1>
+  <p>Strong. Safe. Reliable Scaffolding Solutions — trusted by India’s leading builders.</p>
+  <a href="#contact" class="btn">Request a Quote</a>
+</div>
 
-    <section id="rental">
-      <h2>Rental Services & Brochure</h2>
-      <div class="grid">
-        <div class="card">
-          <p><strong>Flexible Rental Contracts</strong></p>
-          <p>Cost-effective rental options with prompt delivery and reliable on-site support. Ideal for contractors and large infrastructure projects.</p>
-        </div>
-        <div class="card" style="text-align:center">
-          <a href="brochure.pdf" class="btn" target="_blank">👀 View Brochure</a>
-          <a href="brochure.pdf" class="btn" style="margin-left:12px" download>📥 Download Brochure</a>
-        </div>
-      </div>
-    </section>
+<main>
 
-    <section id="why">
-      <h2>Why Choose Fusion Scaffolding</h2>
-      <div class="grid">
-        <div class="card">✔️ 10+ years experience</div>
-        <div class="card">✔️ ISO 9001:2008 certified</div>
-        <div class="card">✔️ Tested & certified products</div>
-        <div class="card">✔️ Pan-India logistics & on-time delivery</div>
-        <div class="card">✔️ Skilled workforce & technical support</div>
-        <div class="card">✔️ Ethical business practices</div>
-      </div>
-    </section>
-
-    <section id="credentials">
-      <h2>Credentials</h2>
-      <div class="grid">
-        <div class="card">🏗 Production capacity: 12,000 tons per annum</div>
-        <div class="card">🏭 45,000 sq. ft. covered manufacturing area</div>
-        <div class="card">🧪 Every product tested & certified before dispatch</div>
-        <div class="card">📄 Test certificates provided with deliveries</div>
-        <div class="card">👷 Highly skilled workforce</div>
-        <div class="card">🤝 Ethical & transparent business operations</div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact & Request a Quotation</h2>
-      <div class="card">
-        <p><strong>Address:</strong><br>
-        OPP. ITI, Near Dixit Transport, Atari Road, Tatibandh<br>
-        Raipur, Chhattisgarh – 492099</p>
-        <p><strong>Phone:</strong> +91-9993399051<br>
-        <strong>Email:</strong> <a href="mailto:info@fusionscaff.com">info@fusionscaff.com</a></p>
-
-        <h3>Request a Quotation</h3>
-        <form action="#" method="post">
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="tel" name="phone" placeholder="Phone number" required>
-          <input type="email" name="email" placeholder="Email address" required>
-          <textarea name="message" placeholder="Project details / requirements" required></textarea>
-          <button type="submit">Submit Request</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Fusion Scaffolding | OPP. ITI, Near Dixit Transport, Atari Road, Tatibandh, Raipur, Chhattisgarh – 492099</p>
-    <p>📱 +91-9993399051 | ✉ <a href="mailto:info@fusionscaff.com">info@fusionscaff.com</a></p>
-  </footer>
-
-  <!-- Floating Action Buttons (Mobile) -->
-  <div class="fab-container">
-    <a href="tel:+919993399051" class="fab call"><i class="fas fa-phone"></i></a>
-    <a href="https://wa.me/919993399051?text=Hello%20Fusion%20Scaffolding,%20I%20have%20an%20enquiry." 
-       target="_blank" class="fab whatsapp"><i class="fab fa-whatsapp"></i></a>
+<section id="about">
+  <h2>About Fusion Scaffolding</h2>
+  <div class="card">
+    <p>Fusion Scaffolding is a trusted leader in scaffolding, shuttering and formwork solutions with over 20 years of experience. ISO 9001:2008 certified, we serve projects nationwide with a strong commitment to safety, quality and on-time delivery.</p>
   </div>
+</section>
 
-  <!-- Desktop WhatsApp floating -->
-  <a href="https://wa.me/919993399051?text=Hello%20Fusion%20Scaffolding,%20I%20have%20an%20enquiry." 
-     target="_blank" class="whatsapp-float" 
-     style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px;border-radius:50%;font-size:26px;z-index:1000;text-align:center;">
-     <i class="fab fa-whatsapp"></i>
-  </a>
+<section id="contact">
+  <h2>Contact & Request a Quotation</h2>
+  <div class="card">
+    <p><strong>Address:</strong><br>
+    OPP. ITI, Near Dixit Transport, Atari Road, Tatibandh<br>
+    Raipur, Chhattisgarh – 492099</p>
+    <p><strong>Phone:</strong> +91-9993399051<br>
+    <strong>Email:</strong> <a href="mailto:info@fusionscaff.com">info@fusionscaff.com</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2025 Fusion Scaffolding | Raipur, Chhattisgarh – 492099</p>
+</footer>
 
 </body>
 </html>
