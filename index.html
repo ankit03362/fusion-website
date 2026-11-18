@@ -20,6 +20,8 @@
 
 <!-- ✅ Favicon -->
 <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+<meta name="theme-color" content="#003366">
+<link rel="preload" as="image" href="images/bg1.jpg">
 
 <!-- ✅ Font Awesome (for icons) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -207,6 +209,24 @@ transition: transform 0.3s;
 @media (max-width: 768px) {
 .whatsapp-float {display: none;}
 }
+@media (max-width: 768px) {
+  header { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px 18px; }
+  .brand img.logo { height: 72px; }
+  .site-title { font-size: 24px; }
+  nav { width: 100%; display: flex; flex-wrap: wrap; gap: 4px; }
+  nav a { font-size: 14px; padding: 8px; }
+  .hero { padding: 70px 16px; }
+  .hero h1 { font-size: 34px; }
+  .hero p { font-size: 17px; }
+  main { margin: 28px auto; }
+}
+@media (max-width: 420px) {
+  .brand { gap: 10px; }
+  .brand img.logo { height: 58px; }
+  .site-title { font-size: 21px; }
+  nav a { font-size: 13px; padding: 7px 6px; }
+  .hero h1 { font-size: 29px; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -261,7 +281,7 @@ transition: transform 0.3s;
 <section id="about">
 <h2>About Fusion Scaffolding</h2>
 <div class="card">
-<p>Fusion Scaffolding is a trusted leader in scaffolding, shuttering and formwork solutions with over 20 years of experience. ISO 9001:2008 certified, we serve projects nationwide with a strong commitment to safety, quality and on-time delivery.</p>
+<p>Fusion Scaffolding is a trusted leader in scaffolding, shuttering and formwork solutions Our team brings more than 10 years of experience. ISO 9001:2008 certified, we serve projects nationwide with a strong commitment to safety, quality and on-time delivery.</p>
 </div>
 </section>
 
@@ -291,7 +311,7 @@ transition: transform 0.3s;
 <section id="why">
 <h2>Why Choose Fusion Scaffolding</h2>
 <div class="grid">
-<div class="card">✔️ 10+ years experience</div>
+<div class="card">✔️ 10+ years of team experience</div>
 <div class="card">✔️ ISO 9001:2008 certified</div>
 <div class="card">✔️ Tested & certified products</div>
 <div class="card">✔️ Pan-India logistics & on-time delivery</div>
@@ -360,11 +380,11 @@ Raipur, Chhattisgarh – 492099</p>
 <!-- Floating Action Buttons (Mobile) -->
 <div class="fab-container">
 <a href="tel:+919993399051" class="fab call"><i class="fas fa-phone"></i></a>
-<a href="https://wa.me/919993399051?text=Hello%20Fusion%20Scaffolding,%20I%20have%20an%20enquiry." target="_blank" class="fab whatsapp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/919993399051?text=Hello%20Fusion%20Scaffolding,%20I%20have%20an%20enquiry." target="_blank" rel="noopener noreferrer" aria-label="Chat with Fusion Scaffolding on WhatsApp" class="fab whatsapp"><i class="fab fa-whatsapp"></i></a>
 </div>
 
 <!-- Desktop WhatsApp floating -->
-<a href="https://wa.me/919993399051?text=Hello%20Fusion%20Scaffolding,%20I%20have%20an%20enquiry." target="_blank" class="whatsapp-float" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px;border-radius:50%;font-size:26px;z-index:1000;text-align:center;">
+<a href="https://wa.me/919993399051?text=Hello%20Fusion%20Scaffolding,%20I%20have%20an%20enquiry." target="_blank" rel="noopener noreferrer" aria-label="Chat with Fusion Scaffolding on WhatsApp" class="whatsapp-float" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px;border-radius:50%;font-size:26px;z-index:1000;text-align:center;">
 <i class="fab fa-whatsapp"></i>
 </a>
 
