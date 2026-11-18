@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.fusionscaff.com/sitemap.xml
+Sitemap: https://fusionscaff.com/sitemap.xml
