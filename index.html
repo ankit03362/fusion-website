@@ -396,7 +396,7 @@ Raipur, Chhattisgarh – 492099</p>
 
       let result = {};
       try { result = await response.json(); } catch (_) {}
-      if (!response.ok || result.success === false || result.error) {
+      if (!response.ok || result.success === false || result.success === "false" || result.error) {
         throw new Error(result.message || result.error || "The enquiry could not be sent.");
       }
 
