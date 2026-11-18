@@ -307,7 +307,7 @@ transition: transform 0.3s;
 <div class="card">🏭 45,000 sq. ft. covered manufacturing area</div>
 <div class="card">🧪 Every product tested & certified before dispatch</div>
 <div class="card">📄 Test certificates provided with deliveries</div>
-<div class="card">👷 Highly skilled workforce</div>
+<div class="card">👷 Highly skilled workforce with 10+ years of team experience</div>
 <div class="card">🤝 Ethical & transparent business operations</div>
 </div>
 </section>
@@ -325,12 +325,25 @@ Raipur, Chhattisgarh – 492099</p>
 
 <h3>Request a Quotation</h3>
 
-<form action="#" method="post">
-<input type="text" name="name" placeholder="Your name" required>
-<input type="tel" name="phone" placeholder="Phone number" required>
-<input type="email" name="email" placeholder="Email address" required>
-<textarea name="message" placeholder="Project details / requirements" required></textarea>
-<button type="submit">Submit Request</button>
+<form id="quote-form" action="https://formsubmit.co/ajax/info@fusionscaff.com" method="POST">
+<input type="hidden" name="_subject" value="New Quotation Enquiry - Fusion Scaffolding Website">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_url" value="https://fusionscaff.com/">
+<div aria-hidden="true" style="position:absolute;left:-5000px;width:1px;height:1px;overflow:hidden;">
+<label for="quote-website">Leave this field empty</label>
+<input id="quote-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
+</div>
+<label for="quote-name">Your name</label>
+<input id="quote-name" type="text" name="name" placeholder="Your name" autocomplete="name" required>
+<label for="quote-phone">Phone number</label>
+<input id="quote-phone" type="tel" name="phone" placeholder="Phone number" autocomplete="tel" inputmode="tel" required>
+<label for="quote-email">Email address</label>
+<input id="quote-email" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+<label for="quote-message">Project details / requirements</label>
+<textarea id="quote-message" name="message" placeholder="Please share product, quantity, location and project requirements" rows="5" required></textarea>
+<button id="quote-submit" type="submit">Submit Request</button>
+<p id="quote-form-status" role="status" aria-live="polite"></p>
+<p><small>We will use these details only to respond to your enquiry. Please do not include confidential or sensitive information.</small></p>
 </form>
 </div>
 </section>
@@ -354,6 +367,43 @@ Raipur, Chhattisgarh – 492099</p>
 <i class="fab fa-whatsapp"></i>
 </a>
 
+<script>
+(function () {
+  const form = document.getElementById("quote-form");
+  if (!form) return;
+  const submitButton = document.getElementById("quote-submit");
+  const status = document.getElementById("quote-form-status");
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+    status.textContent = "Sending your enquiry securely. Please wait.";
+    status.style.color = "";
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form).entries()))
+      });
+      let result = {};
+      try { result = await response.json(); } catch (_) {}
+      if (!response.ok || result.success === false || result.success === "false" || result.error) {
+        throw new Error(result.message || result.error || "The enquiry could not be sent.");
+      }
+      status.textContent = "Thank you! Your quotation request has been submitted. Our team will contact you shortly.";
+      status.style.color = "#16713b";
+      form.reset();
+    } catch (error) {
+      status.textContent = "We could not submit your request right now. Please call +91-9993399051 or email info@fusionscaff.com.";
+      status.style.color = "#b42318";
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Submit Request";
+    }
+  });
+})();
+</script>
 </body>
 </html>
  
